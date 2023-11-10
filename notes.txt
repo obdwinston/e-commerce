@@ -1,0 +1,20 @@
+- "npm create-react-app frontend" in root folder
+- add .env to .gitignore in frontend folder
+- remove / from /node_modules in .gitignore in frontend folder
+- "init git" in root folder
+- delete .git in frontend folder
+- move .gitignore to root folder
+- "npm install axios" in frontend folder
+- add "http://localhost:5000" to frontend package.json
+
+- "npm init" in root folder
+- entry point: server.js
+- add "type": "module" to root package.json
+- "npm install express" in root folder
+- "npm install nodemon concurrently" in root folder
+- add "server": "nodemon backend/server.js" to scripts in root package.json
+- add "client": "npm start --prefix frontend", to scripts in root package.json
+- add "dev": "concurrently \"npm run server\" \"npm run client\"" to scripts in root package.json
+- "npm install dotenv" in root folder
+- add .env file in root folder
+- add environment variables to root .env
