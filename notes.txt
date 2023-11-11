@@ -1,12 +1,14 @@
+setting up frontend folder
 - "npm create-react-app frontend" in root folder
-- add .env to .gitignore in frontend folder
-- remove / from /node_modules in .gitignore in frontend folder
 - "init git" in root folder
 - delete .git in frontend folder
 - move .gitignore to root folder
+- add .env to .gitignore
+- remove / from /node_modules in .gitignore
 - "npm install axios" in frontend folder
-- add "http://localhost:5000" to frontend package.json
+- add "http://localhost:5000" proxy to frontend package.json
 
+setting up backend folder
 - "npm init" in root folder
 - entry point: server.js
 - add "type": "module" to root package.json
@@ -18,3 +20,20 @@
 - "npm install dotenv" in root folder
 - add .env file in root folder
 - add environment variables to root .env
+
+connecting mongodb
+- connect database to application
+- add database URI to .env
+- add password and database name to URI
+- "npm install mongoose" in root folder
+- create config folder in backend folder
+- add db.js with database connect async function
+- call function in server.js
+
+setting up postman
+- create workspace
+- create new environment
+- add base URL (i.e. backend proxy)
+- create new API
+- add a collection
+- add request in collection
