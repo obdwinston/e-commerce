@@ -1,3 +1,15 @@
+API - defines a set of definitions and protocols that enable two software components to communicate with each other
+- e.g. Representational State Transfer (REST) APIs
+- defines a set of functions like GET, PUT, DELETE, etc. that clients can use to access server data.
+- clients and servers exchange data useing HyperText Transfer Protocol (HTTP)
+- clients send requests and servers reply with responses
+middleware - software that different applications use to communicate wtih each other
+
+authentication - verifying that user email and password matches
+authorisation - verifying that user has access to protected content
+encoded - information that is  
+encrypted - information 
+
 setting up frontend folder
 - "npm create-react-app frontend" in root folder
 - "init git" in root folder
@@ -37,3 +49,9 @@ setting up postman
 - create new API
 - add a collection
 - add request in collection
+- set Params if required (e.g. {{baseURL}}/users/:id)
+- set Body if required in x-www-form-urlencoded (i.e. key-value pairs)
+- clear cookies if required to verify unauthorised access (under Send button)
+
+setting up redux/redux toolkit
+- "npm install @reduxjs/toolkit react-redux" in frontend folder
