@@ -15,11 +15,12 @@ import { useDispatch } from "react-redux";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Rating from "../components/Rating";
-import { useGetProductQuery } from "../slices/productsSlice";
+import { useGetProductQuery } from "../slices/productsApiSlice";
 import { addToCart } from "../slices/cartSlice";
 
 const ProductPage = () => {
   const { id: productId } = useParams();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

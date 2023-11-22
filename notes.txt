@@ -1,14 +1,14 @@
 API - defines a set of definitions and protocols that enable two software components to communicate with each other
 - e.g. Representational State Transfer (REST) APIs
-- defines a set of functions like GET, PUT, DELETE, etc. that clients can use to access server data.
+- defines a set of functions like GET, PUT, DELETE, etc. that clients can use to request for server data.
 - clients and servers exchange data useing HyperText Transfer Protocol (HTTP)
 - clients send requests and servers reply with responses
 middleware - software that different applications use to communicate wtih each other
-
 authentication - verifying that user email and password matches
 authorisation - verifying that user has access to protected content
-encoded - information that is  
-encrypted - information 
+encoded - information encoded with a known key
+encrypted - information encrypted with a secret key
+JWT - SIGNATURE ensures (1) token information not tempered with, and (2) token issued with SERVER secret key
 
 setting up frontend folder
 - "npm create-react-app frontend" in root folder
@@ -55,3 +55,9 @@ setting up postman
 
 setting up redux/redux toolkit
 - "npm install @reduxjs/toolkit react-redux" in frontend folder
+
+chrome devtools
+- local storage: Application > Local storage
+- cookies: Application > Cookies
+- install react developer tools
+- install redux devtools

@@ -14,6 +14,8 @@ import App from "./App";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import SigninPage from "./pages/SigninPage.jsx";
+import SignupPage from "./pages/SignupPage.jsx";
 
 import "./assets/styles/index.css";
 import "./assets/styles/bootstrap.custom.css";
@@ -27,6 +29,8 @@ const router = createBrowserRouter(
       {/* index prevents multiple screens from showing at once */}
       <Route path="/product/:id" element={<ProductPage />}></Route>
       <Route path="/cart" element={<CartPage />}></Route>
+      <Route path="/signin" element={<SigninPage />}></Route>
+      <Route path="/signup" element={<SignupPage />}></Route>
     </Route>
   )
 );
