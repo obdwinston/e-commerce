@@ -61,3 +61,11 @@ chrome devtools
 - cookies: Application > Cookies
 - install react developer tools
 - install redux devtools
+
+paypal developer
+- Apps & Credentials > Create App
+- add Client ID to .env file in frontend folder
+- set up paypal configuration in server.js file in backend folder
+- "npm install @paypal/react-paypal-js" in frontend folder
+- add paypal script provider in index.js file in frontend folder
+- switch from Sandbox to Live when in production
