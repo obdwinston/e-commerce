@@ -73,3 +73,6 @@ paypal developer
 - add paypal script provider in index.js file in frontend folder
 - select Testing Tools (beside Apps & Credentials header) to retrieve sandbox account information 
 - switch from Sandbox to Live when in production
+
+deployment preparation (render)
+- see commit "deployment preparation"
