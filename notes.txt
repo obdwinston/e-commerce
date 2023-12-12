@@ -80,3 +80,5 @@ deployment preparation (render)
 - "npm run build" (ensure build script exists) under Build Command
 - "npm run start" (ensure start script exists) under Start Command
 - add MongoDB, JWT, and PayPal Environment Variables
+- Connect > Outbound > copy IP address(es) in Render
+- Security > Network Access > IP Access List > add IP addess(es) in MongoDB

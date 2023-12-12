@@ -23,7 +23,7 @@ export const productsSlice = apiSlice.injectEndpoints({
         method: "POST",
       }),
       invalidatesTags: ["Product"],
-      // required to reload page after creating new product (?)
+      // clears "Products" cache and forces a refetch
     }),
     uploadProductImage: builder.mutation({
       query: (data) => ({
@@ -39,7 +39,6 @@ export const productsSlice = apiSlice.injectEndpoints({
         body: data,
       }),
       invalidatesTags: ["Product"],
-      // clears "Products" cache and forces a refetch
     }),
     deleteProduct: builder.mutation({
       query: (productId) => ({
