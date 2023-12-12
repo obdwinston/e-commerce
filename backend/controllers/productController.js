@@ -8,9 +8,24 @@ import Product from "../models/productModel.js";
 // @route GET /api/products
 // @access public
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
+  const pageSize = 4;
+  const page = Number(req.query.pageNumber) || 1;
+
+  const keyword = req.query.keyword
+    ? { name: { $regex: req.query.keyword, $options: "i" } }
+    : {};
+  // mongoDB features
+  // $regex - regular expression for pattern matching strings in queries
+  // "i" - case insensitive
+
+  const count = await Product.countDocuments({ ...keyword });
+  // mongoose method to count number of documents in collection
+
+  const products = await Product.find({ ...keyword })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
   // empty object {} finds all products
-  res.status(200).json(products);
+  res.status(200).json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
 // @desc get product
@@ -139,6 +154,14 @@ const createReview = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc get top products
+// @route GET /api/products/top
+// @access public
+const getTopProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+  res.status(200).json(products);
+});
+
 export {
   getProducts,
   getProduct,
@@ -146,4 +169,5 @@ export {
   updateProduct,
   deleteProduct,
   createReview,
+  getTopProducts,
 };

@@ -41,7 +41,13 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomePage />}></Route>
       {/* index prevents multiple screens from showing at once */}
-      <Route path="/product/:id" element={<ProductPage />}></Route>
+      <Route path="/search/:keyword" element={<HomePage />}></Route>
+      <Route path="/page/:pageNumber" element={<HomePage />}></Route>
+      <Route
+        path="/search/:keyword/page/:pageNumber"
+        element={<HomePage />}
+      ></Route>
+      <Route path="/products/:id" element={<ProductPage />}></Route>
       <Route path="/cart" element={<CartPage />}></Route>
       <Route path="/signin" element={<SigninPage />}></Route>
       <Route path="/signup" element={<SignupPage />}></Route>
@@ -57,6 +63,10 @@ const router = createBrowserRouter(
       <Route path="" element={<AdminRoute />}>
         <Route path="/admin/orderlist" element={<OrderListPage />}></Route>
         <Route path="/admin/productlist" element={<ProductListPage />}></Route>
+        <Route
+          path="/admin/productlist/page/:pageNumber"
+          element={<ProductListPage />}
+        ></Route>
         <Route
           path="/admin/product/:id/edit"
           element={<ProductEditPage />}

@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
+import Paginate from "../../components/Paginate";
 import {
   useGetProductsQuery,
   useCreateProductMutation,
@@ -14,13 +15,11 @@ import {
 } from "../../slices/productsApiSlice";
 
 const ProductListPage = () => {
-  const {
-    data: products,
-    isLoading,
+  const { pageNumber } = useParams();
 
-    error,
-    refetch,
-  } = useGetProductsQuery();
+  const { data, isLoading, error, refetch } = useGetProductsQuery({
+    pageNumber,
+  });
 
   const [createProduct, { isLoading: loadingCreate }] =
     useCreateProductMutation();
@@ -85,7 +84,7 @@ const ProductListPage = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
+              {data.products.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
@@ -110,6 +109,7 @@ const ProductListPage = () => {
               ))}
             </tbody>
           </Table>
+          <Paginate pages={data.pages} page={data.page} isAdmin={true} />
         </>
       )}
     </>

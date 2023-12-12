@@ -8,6 +8,7 @@ import { useSignoutMutation } from "../slices/usersApiSlice";
 import { resetCredentials } from "../slices/authSlice";
 
 import logo from "../assets/logo.png";
+import Search from "./Search";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -45,6 +46,8 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+              <Search />
+
               {/* me-auto shifts menu to LHS */}
               {/* ms-auto shifts menu to RHS */}
               <LinkContainer to="/cart">
