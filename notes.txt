@@ -76,3 +76,7 @@ paypal developer
 
 deployment preparation (render)
 - see commit "deployment preparation"
+- create new Web Service on Render
+- "npm run build" (ensure build script exists) under Build Command
+- "npm run start" (ensure start script exists) under Start Command
+- add MongoDB, JWT, and PayPal Environment Variables
