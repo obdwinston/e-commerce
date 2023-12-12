@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+      <Navbar bg="primary" variant="dark" expand="md" collapseOnSelect>
         {/* menu collapses to hamburger menu for screen size smaller than md */}
         <Container>
           <LinkContainer to="/">
