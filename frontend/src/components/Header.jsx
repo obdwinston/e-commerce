@@ -6,6 +6,7 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useSignoutMutation } from "../slices/usersApiSlice";
 import { resetCredentials } from "../slices/authSlice";
+import { resetCart } from "../slices/cartSlice";
 
 import logo from "../assets/logo.png";
 import Search from "./Search";
@@ -24,6 +25,7 @@ const Header = () => {
     try {
       await signout().unwrap();
       dispatch(resetCredentials());
+      dispatch(resetCart());
       navigate("/signin");
     } catch (error) {
       console.log(error.data.message);
