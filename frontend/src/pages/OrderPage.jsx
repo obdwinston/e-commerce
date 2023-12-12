@@ -12,6 +12,7 @@ import {
   useGetOrderQuery,
   usePayOrderMutation,
   useGetPaypalClientIdQuery,
+  useDeliverOrderMutation,
 } from "../slices/ordersApiSlice";
 
 const OrderPage = () => {
@@ -28,6 +29,9 @@ const OrderPage = () => {
     error: errorPaypal,
   } = useGetPaypalClientIdQuery();
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+
+  const [deliverOrder, { isLoading: loadingDeliver }] =
+    useDeliverOrderMutation();
 
   useEffect(() => {
     if (!errorPaypal && !loadingPaypal && paypal.clientId) {
@@ -89,10 +93,15 @@ const OrderPage = () => {
       });
   }
 
+  const deliverHandler = async () => {
+    await deliverOrder(orderId);
+    refetch();
+  };
+
   return isLoading ? (
     <Loader />
   ) : error ? (
-    <Message variant="danger">{error.data.message}</Message>
+    <Message variant="danger">{error?.data?.message || error.error}</Message>
   ) : (
     <>
       <h1>Order {order._id}</h1>
@@ -227,6 +236,23 @@ const OrderPage = () => {
                   )}
                 </ListGroup.Item>
               )}
+
+              {loadingDeliver && <Loader />}
+
+              {userInfo &&
+                userInfo.isAdmin &&
+                order.isPaid &&
+                !order.isDelivered && (
+                  <ListGroup.Item>
+                    <Button
+                      type="button"
+                      className="btn btn-block"
+                      onClick={deliverHandler}
+                    >
+                      Mark As Delivered
+                    </Button>
+                  </ListGroup.Item>
+                )}
             </ListGroup>
           </Card>
         </Col>

@@ -10,6 +10,9 @@ encoded - information encoded with a known key
 encrypted - information encrypted with a secret key
 JWT - SIGNATURE ensures (1) token information not tempered with, and (2) token issued with SERVER secret key
 
+Server --> Route --> (Middleware) --> Controller --> API Slice --> Data Slice --> Component
+(<------------------backend------------------->)     (<-------------frontend------------->)
+
 setting up frontend folder
 - "npm create-react-app frontend" in root folder
 - "init git" in root folder
@@ -68,4 +71,5 @@ paypal developer
 - set up paypal configuration in server.js file in backend folder
 - "npm install @paypal/react-paypal-js" in frontend folder
 - add paypal script provider in index.js file in frontend folder
+- select Testing Tools (beside Apps & Credentials header) to retrieve sandbox account information 
 - switch from Sandbox to Live when in production

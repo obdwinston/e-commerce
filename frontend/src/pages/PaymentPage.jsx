@@ -4,10 +4,9 @@ import { Form, Button, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { savePaymentMethod } from "../slices/cartSlice";
-
 import Progress from "../components/Progress";
 import FormContainer from "../components/FormContainer";
+import { savePaymentMethod } from "../slices/cartSlice";
 
 const PaymentPage = () => {
   const cart = useSelector((state) => state.cart);

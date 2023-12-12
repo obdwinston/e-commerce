@@ -22,7 +22,14 @@ import PaymentPage from "./pages/PaymentPage.jsx";
 import PlaceOrderPage from "./pages/PlaceOrderPage.jsx";
 import OrderPage from "./pages/OrderPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
+import OrderListPage from "./pages/admin/OrderListPage.jsx";
+import ProductListPage from "./pages/admin/ProductListPage.jsx";
+import ProductEditPage from "./pages/admin/ProductEditPage.jsx";
+import UserListPage from "./pages/admin/UserListPage.jsx";
+import UserEditPage from "./pages/admin/UserEditPage.jsx";
+
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import AdminRoute from "./components/AdminRoute.jsx";
 
 import "./assets/styles/index.css";
 import "./assets/styles/bootstrap.custom.css";
@@ -45,6 +52,17 @@ const router = createBrowserRouter(
         <Route path="/placeorder" element={<PlaceOrderPage />}></Route>
         <Route path="/order/:id" element={<OrderPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
+      </Route>
+
+      <Route path="" element={<AdminRoute />}>
+        <Route path="/admin/orderlist" element={<OrderListPage />}></Route>
+        <Route path="/admin/productlist" element={<ProductListPage />}></Route>
+        <Route
+          path="/admin/product/:id/edit"
+          element={<ProductEditPage />}
+        ></Route>
+        <Route path="/admin/userlist" element={<UserListPage />}></Route>
+        <Route path="/admin/user/:id/edit" element={<UserEditPage />}></Route>
       </Route>
     </Route>
   )
